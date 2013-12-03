@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+
+SESSION=webkite
+WORKING_DIR=$HOME/src/$SESSION
+
+pushd .
+cd $WORKING_DIR
+
+tmux start-server
+tmux new-session -d -s $SESSION
+
+tmux new-window -t $SESSION:1 -n server
+tmux new-window -t $SESSION:2 -n git
+tmux new-window -t $SESSION:3 -n rspec
+tmux new-window -t $SESSION:4 -n console
+
+tmux send-keys -t $SESSION:1 'rails s' C-m
+
+tmux select-window -t $SESSION:2
+tmux attach-session -d -t $SESSION

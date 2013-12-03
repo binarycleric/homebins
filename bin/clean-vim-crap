@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+find . -name '*.swp' -exec rm '{}' \;
+echo "Cleaned up!"

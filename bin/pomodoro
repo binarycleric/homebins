@@ -1,0 +1,8 @@
+for i in `seq 1 25`;
+do
+  sleep 60
+  echo "$i minutes have passed."
+done
+
+say -v Princess "Take a break"
+growlnotify -m "25 minutes have passed. Take a break." -t 'Stop. Tomato Time!'
