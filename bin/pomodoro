@@ -1,3 +1,5 @@
+say -v Princess "Ready. Set. Go."
+
 for i in `seq 1 25`;
 do
   sleep 60
